@@ -19,9 +19,8 @@ spec:
         image: krishnaobbu/healthcare:6   # Replace with your app image
         ports:
         - containerPort: 8082       # Application's listening port
-
 ---
-
+# Node Port Service
 apiVersion: v1
 kind: Service
 metadata:
