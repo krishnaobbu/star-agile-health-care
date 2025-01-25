@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medicure-deployment
+  labels:
+    app: medicure
+spec:
+  replicas: 3  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: medicure
+  template:
+    metadata:
+      labels:
+        app: medicure
+    spec:
+      containers:
+      - name: medicure-app
+        image: krishnaobbu/healthcare:6   # Replace with your app image
+        ports:
+        - containerPort: 8082       # Application's listening port
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: medicure-service
+  labels:
+    app: medicure
+spec:
+  selector:
+    app: medicure  # Must match the label in the Deployment
+  ports:
+    - protocol: TCP
+      port: 80           # Exposed port for the service
+      targetPort: 8082   # Port the container is listening on
+  type: NodePort     # Can be NodePort, ClusterIP, or LoadBalancer
+
