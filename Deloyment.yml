@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: medicure-deployment
-  labels:
+    labels:
     app: medicure
 spec:
   replicas: 3  # Number of pod replicas
