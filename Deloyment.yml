@@ -5,7 +5,7 @@ metadata:
   labels:                  # Fixed alignment
     app: medicure          # Indentation corrected
 spec:
-  replicas: 3              # Number of pod replicas
+  replicas: 1              # Number of pod replicas
   selector:
     matchLabels:
       app: medicure
