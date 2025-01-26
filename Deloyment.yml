@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: medicure-app
-        image: krishnaobbu/healthcare:6  # Replace with your app image
+        image: krishnaobbu/healthcare:7  # Replace with your app image
         ports:
         - containerPort: 8082            # Application's listening port
 ---
